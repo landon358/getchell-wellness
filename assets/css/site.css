@@ -120,11 +120,12 @@ em { font-style: italic; }
 
 .nav { position: relative; z-index: 20; }
 .nav__in { width: min(1320px, 100% - 2 * var(--gutter)); margin-inline: auto; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 1.5rem 0; }
-.nav__side { display: none; align-items: center; gap: clamp(1rem, 2.5vw, 2.4rem); }
+.nav__side { display: none; align-items: center; gap: 0.6rem; }
 .nav__side--right { justify-content: flex-end; }
-.nav__side a { font-weight: 500; font-size: 1rem; color: var(--ink-2); transition: color 0.4s var(--ease); }
-.nav__side a:hover, .nav__side a[aria-current="page"] { color: var(--blue); }
-.nav__side .btn { padding: 0.8rem 1.4rem; font-size: 0.95rem; color: #fff; }
+.nav__side a { font-weight: 500; font-size: 0.95rem; line-height: 1; color: var(--blue); padding: 0.75rem 1.25rem; border-radius: 999px; border: 1.5px solid var(--blue); transition: background-color 0.4s var(--ease), color 0.4s var(--ease); }
+.nav__side a:hover, .nav__side a[aria-current="page"] { background: var(--blue-soft); }
+.nav__side .btn { padding: 0.8rem 1.4rem; font-size: 0.95rem; color: #fff; border-radius: 999px; border: 1.5px solid var(--blue); }
+.nav__side .btn:hover, .nav__side .btn[aria-current="page"] { background: var(--blue-2); border-color: var(--blue-2); color: #fff; }
 .logo { display: inline-flex; align-items: center; gap: 0.75rem; justify-self: center; }
 .logo svg { width: 64px; height: auto; }
 .logo svg rect { stroke: var(--blue); }

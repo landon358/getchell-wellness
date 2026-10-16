@@ -5,8 +5,8 @@
 ------------------------------------------------------------------- */
 
 :root {
-  --cream: #FBF7F0;
-  --cream-deep: #F2EBDF;
+  --cream: #F1F2F4;
+  --cream-deep: #E6E8EB;
   --ink: #2A2E36;
   --ink-2: #4C525C;
   --ink-3: #7A8089;
@@ -92,7 +92,7 @@ em { font-style: italic; }
 .photo--16x9 { aspect-ratio: 16 / 9; }
 .photo--21x9 { aspect-ratio: 21 / 9; }
 .photo--square { aspect-ratio: 1; }
-.photo .caption { position: absolute; left: 1.5rem; bottom: 1.5rem; font-size: 0.8rem; font-weight: 600; color: var(--blue); background: rgba(251,247,240,0.9); padding: 0.4rem 0.75rem; border-radius: 8px; }
+.photo .caption { position: absolute; left: 1.5rem; bottom: 1.5rem; font-size: 0.8rem; font-weight: 600; color: var(--blue); background: rgba(241,242,244,0.9); padding: 0.4rem 0.75rem; border-radius: 8px; }
 
 /* ---------- buttons ---------- */
 

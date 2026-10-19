@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Colour lab · Getchell Wellness</title>
+<meta name="description" content="Keynotes and trainings for construction crews, retreats for the men who lead them, and one-on-one work. Built by a clinical social worker who grew up in the trades and lost his brother to suicide.">
+<link rel="icon" href="assets/img/gw-logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="stylesheet" href="assets/css/site.css?v=15">
+<style id="lab">
+/* ---- Colour lab: five accent directions on the live home page ---- */
+:root { --accent: var(--ink); --accent-ink: #fff; --accent-soft: var(--fill); --accent-2: var(--ink); }
+html.t-yellow { --accent: #F2C500; --accent-ink: #0B0F17; --accent-soft: #FFF3B8; }
+html.t-blue   { --accent: #2456A6; --accent-ink: #fff;    --accent-soft: #E4ECFA; }
+html.t-orange { --accent: #E4541E; --accent-ink: #fff;    --accent-soft: #FCE6DC; }
+html.t-duo    { --accent: #1F3B61; --accent-ink: #fff;    --accent-soft: #E4ECFA; --accent-2: #F2C500; }
+html.t-forest { --accent: #2F5D3A; --accent-ink: #fff;    --accent-soft: #E3EEE6; }
+
+html[class*="t-"] .btn:not(.btn--ghost) { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+html[class*="t-"] .btn:not(.btn--ghost):hover { background: var(--accent); border-color: var(--accent); filter: brightness(0.93); }
+html[class*="t-"] .nav__side .btn { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+html[class*="t-"] .link { color: var(--accent); }
+html[class*="t-"] .link:hover { border-color: var(--accent); }
+html[class*="t-"] .stat b { color: var(--accent); }
+html[class*="t-"] .photo .caption { background: var(--accent); color: var(--accent-ink); }
+html[class*="t-"] .section-head::before { content: ""; display: block; width: 3rem; height: 4px; background: var(--accent); margin-bottom: 1.5rem; border-radius: 2px; }
+html[class*="t-"] .section-head { border-top: 0; padding-top: 0; }
+html[class*="t-"] .nav__side a[aria-current="page"] { background: var(--accent-soft); color: var(--ink); }
+html[class*="t-"] ::selection { background: var(--accent); color: var(--accent-ink); }
+html[class*="t-"] .list li::before { background: var(--accent); }
+html[class*="t-"] .cta .wrap--narrow { background: var(--accent); color: var(--accent-ink); }
+html[class*="t-"] .cta h2 { color: var(--accent-ink); }
+html[class*="t-"] .cta .lede { color: var(--accent-ink); opacity: 0.8; }
+html[class*="t-"] .cta .btn { background: var(--accent-ink); color: var(--accent); border-color: var(--accent-ink); }
+html[class*="t-"] .cta .btn:hover { filter: none; background: var(--accent-ink); opacity: 0.92; }
+html[class*="t-"] .footer__crisis b { color: var(--accent); }
+html[class*="t-"] .cite strong { color: var(--accent); }
+
+/* headline highlight: yellow highlighter where yellow is in play, colour-only elsewhere */
+mark.hi { background: none; color: inherit; }
+html.t-yellow mark.hi, html.t-duo mark.hi { background: linear-gradient(transparent 62%, var(--accent-2, var(--accent)) 62%); color: inherit; }
+html.t-blue mark.hi, html.t-orange mark.hi, html.t-forest mark.hi { color: var(--accent); }
+
+/* yellow: keep the CTA panel ink so the yellow button is the pop */
+html.t-yellow .cta .wrap--narrow { background: var(--ink); color: #fff; }
+html.t-yellow .cta h2 { color: #fff; }
+html.t-yellow .cta .lede { color: rgba(255,255,255,0.72); }
+html.t-yellow .cta .btn { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+
+/* duo: blue structure, yellow highlights only */
+html.t-duo .stat b { color: var(--ink); }
+html.t-duo .stat b small { color: var(--accent-2); }
+html.t-duo .photo .caption { background: var(--accent-2); color: #0B0F17; }
+html.t-duo .section-head::before { background: var(--accent-2); }
+html.t-duo .cta .btn { background: var(--accent-2); color: #0B0F17; border-color: var(--accent-2); }
+
+/* switcher */
+.lab { position: fixed; left: 50%; bottom: 1.25rem; transform: translateX(-50%); z-index: 100; display: flex; gap: 0.25rem; padding: 0.35rem; background: rgba(11,15,23,0.92); backdrop-filter: blur(12px); border-radius: 999px; box-shadow: 0 20px 50px -20px rgba(0,0,0,0.5); }
+.lab button { color: #fff; font: 600 0.8rem/1 var(--sans); padding: 0.6rem 0.9rem; border-radius: 999px; display: inline-flex; align-items: center; gap: 0.45rem; opacity: 0.75; }
+.lab button i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; background: var(--sw); }
+.lab button:hover, .lab button.on { opacity: 1; background: rgba(255,255,255,0.12); }
+@media (max-width: 720px) { .lab { bottom: 0.75rem; max-width: calc(100% - 1.5rem); overflow-x: auto; } .lab button span { display: none; } }
+</style>
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="nav__in">
+    <a class="logo" href="index.html" aria-label="Getchell Wellness home">
+      <svg viewBox="0 0 104 48" aria-hidden="true"><rect x="1.75" y="1.75" width="100.5" height="44.5" fill="none" stroke="#1F3B61" stroke-width="3"/><text x="19" y="33" font-family="Instrument Sans, system-ui, sans-serif" font-size="25" font-weight="500" fill="#1F3B61">G</text><text x="56" y="33" font-family="Instrument Sans, system-ui, sans-serif" font-size="25" font-weight="500" fill="#1F3B61">W</text></svg>
+      <span>Getchell<br>Wellness</span>
+    </a>
+    <nav class="nav__side" aria-label="Primary">
+      <a href="speaking.html">Speaking</a>
+      <a href="retreats.html">Men's Retreats</a>
+      <a href="therapy.html">One-on-one</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a class="btn" href="contact.html">Book a call</a>
+    </nav>
+    <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+<div class="menu">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="speaking.html">Speaking</a></li>
+    <li><a href="retreats.html">Men's Retreats</a></li>
+    <li><a href="therapy.html">One-on-one</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a class="btn" href="contact.html">Book a call</a></li>
+  </ul>
+  <div class="menu__foot">If you're in crisis, call or text 988.</div>
+</div>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__text">
+    <h1 class="reveal">Start the conversation that <mark class="hi">saves lives.</mark></h1>
+    <p class="lede reveal" style="--d:.08s">Mental health and suicide prevention for construction crews, the men who lead them, and the men who are struggling. From someone who grew up on the job site and trained in the clinic.</p>
+    <div class="actions reveal" style="--d:.16s">
+      <a class="btn" href="speaking.html">Book Ethan to speak <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn--ghost" href="#work">Three ways to work together</a>
+    </div>
+  </div>
+  <div class="hero__photo reveal">
+    <img fetchpriority="high" decoding="async" src="assets/img/helical-crew.jpg" alt="A construction crew of about fifty standing in front of drill rigs after a Hope in Hard Hats talk">
+  </div>
+</section>
+
+
+<!-- THREE OFFERINGS -->
+<section class="section" id="work">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2>Three ways to work together.</h2>
+      <p class="lede">Same work, three settings. A room full of crew members, a small group of leaders away from the site, or one man across the table.</p>
+    </div>
+    <div class="grid grid--3" data-stagger>
+      <a class="offer reveal" href="speaking.html">
+        <div class="photo"><img loading="lazy" decoding="async" src="assets/img/crew-hardhats.jpg" alt="Ethan delivering Hope in Hard Hats to a lunchroom full of crew in hard hats"></div>
+        <div class="offer__body">
+          <h3>Keynotes and trainings for crews and the people who lead them.</h3>
+          <p>Safety meetings, all-hands, conferences, foreman workshops. Built for construction, from inside it.</p>
+          <span class="link">Speaking <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+      <a class="offer reveal" href="retreats.html">
+        <div class="photo"><img loading="lazy" decoding="async" src="assets/img/crew-circle.jpg" alt="Men standing arm in arm in a circle"></div>
+        <div class="offer__body">
+          <h3>A few days away for the men who carry a crew.</h3>
+          <p>Small group. No stage. Real conversation with other leaders who understand the weight, and a clinician who grew up in it.</p>
+          <span class="link">Men's Retreats <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+      <a class="offer reveal" href="therapy.html">
+        <div class="photo"><img loading="lazy" decoding="async" src="assets/img/ethan-smile.jpg" alt="Ethan smiling with a microphone" style="object-position: center 30%"></div>
+        <div class="offer__body">
+          <h3>When a talk isn't enough.</h3>
+          <p>Private, one-on-one work for men who are done carrying it alone. Starts with a free call. No pitch.</p>
+          <span class="link">One-on-one <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- NUMBERS -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2>The numbers your safety program isn't talking about.</h2>
+      <p class="lede">Construction has one of the highest suicide rates of any industry. These aren't abstract. They belong to real men on real job sites.</p>
+    </div>
+    <div class="grid grid--3" data-stagger>
+      <div class="stat reveal"><b>~2<small>×</small></b><p>Construction workers die by suicide at nearly twice the rate of all working men.</p><cite>CDC / NIOSH</cite></div>
+      <div class="stat reveal"><b>5<small>×</small></b><p>More construction workers die by suicide each year than from job-site accidents.</p><cite>Construction Industry Alliance for Suicide Prevention</cite></div>
+      <div class="stat reveal"><b>1</b><p>Conversation. Done right, that's what it takes to change the direction of someone's life.</p><cite>That's the whole job</cite></div>
+    </div>
+  </div>
+</section>
+
+<!-- AUSTIN -->
+<section class="section">
+  <div class="wrap split">
+    <div class="photo photo--4x3 reveal"><img loading="lazy" decoding="async" src="assets/img/austins-story.jpg" alt="Ethan presenting beside a slide titled Austin's Story, with a photo of his brother Austin"><span class="caption">Austin's story</span></div>
+    <div>
+      <h2 class="reveal" style="--d:.08s">I lost my brother Austin at sixteen.</h2>
+      <div class="measure reveal" style="--d:.16s">
+        <p class="lede">He was the youngest of us. Ginger hair, a big laugh, a tight circle of friends. He died by suicide in March 2022, a month after his birthday.</p>
+        <p>That loss could have ended me. Instead it pulled me out of the trades and into social work and psychiatry, so I could understand what happened and make sure another family doesn't have to go through it. Everything I bring to a job site comes from that. I'm not teaching theory. I'm sharing what I've lived.</p>
+      </div>
+      <div class="actions reveal" style="--d:.24s">
+        <a class="btn" href="about.html">Read the full story <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section class="section">
+  <div class="wrap">
+    <div class="wrap--narrow center reveal" style="margin-bottom: clamp(2.5rem,5vw,4rem)">
+      <blockquote class="quote">"Ethan's personal story and experience in construction had a serious and profound impact with our team. His speech was a turning point for our organization."</blockquote>
+      <div class="cite"><strong>Dan Hoffman</strong>, Senior Project Manager, Clark Contracting Services</div>
+    </div>
+    <div class="grid grid--3" data-stagger>
+      <div class="card reveal"><p class="quote quote--sm">"Audience-centered, content rich, and appropriately challenging. His delivery was flawless."</p><div class="cite"><strong>Rob Pocock</strong>, executive coach and college professor</div></div>
+      <div class="card reveal"><p class="quote quote--sm">"A great mix of inspiration, hope, and actionable items."</p><div class="cite"><strong>Attendee</strong>, HomeWorks Tri-County Electric</div></div>
+      <div class="card reveal"><p class="quote quote--sm">"The words you said made me sad but helped me look at my trauma differently. It really encouraged me to put this at the top for our organization."</p><div class="cite"><strong>Attendee</strong>, post-keynote</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WRITING + BOOK -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2>Candid conversations, in writing.</h2>
+      <p class="lede">Notes from the job site, the clinic, and the kitchen table. No hype. Free on Substack.</p>
+    </div>
+    <div class="grid grid--3" data-stagger>
+      <a class="card reveal" href="https://ethangetchell.substack.com/p/the-longest-30-seconds" target="_blank" rel="noopener"><h4>The Longest 30 Seconds</h4><p>What happens in the silence after you ask a man if he's okay.</p><div class="spacer"></div><span class="link">Read on Substack <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      <a class="card reveal" href="https://ethangetchell.substack.com/p/hope-hype" target="_blank" rel="noopener"><h4>Hope &gt; Hype</h4><p>"I despise motivational speaking." Why a talk that leaves people inspired and forgetful is worse than no talk at all.</p><div class="spacer"></div><span class="link">Read on Substack <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      <a class="card reveal" href="https://ethangetchell.substack.com/p/what-500-young-men-have-taught-me" target="_blank" rel="noopener"><h4>What 500+ Young Men Have Taught Me About Mental Health</h4><p>"Loneliness doesn't feel like loneliness. It feels like apathy."</p><div class="spacer"></div><span class="link">Read on Substack <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    </div>
+    <div class="card reveal measure" style="margin-top:2.5rem">
+          <h3><em>Things in My Pocket</em></h3>
+          <p>Stories behind the everyday objects a man carries, and what they reveal. Organized around three things: healthy masculinity, emotional intelligence, and mental health. It includes a letter to Austin, written after he died.</p>
+          <div class="actions" style="margin-top:1.25rem; align-items:center">
+            <a class="btn" href="https://www.amazon.com/Things-my-Pocket-Ethan-Getchell-ebook/dp/B0CBHRQ34C" target="_blank" rel="noopener">Get the book</a>
+            <span class="small">Paperback $14.99 · Kindle $9.99</span>
+          </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section cta">
+  <div class="wrap--narrow center reveal">
+    <h2>Your crew deserves more than a poster on the wall.</h2>
+    <p class="lede">Fill out the form. Every message is read by me. You'll hear back within one business day.</p>
+    <div class="actions">
+      <a class="btn" href="contact.html">Start the conversation <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <a class="logo" href="index.html" aria-label="Getchell Wellness home">
+          <svg viewBox="0 0 104 48" aria-hidden="true"><rect x="1.75" y="1.75" width="100.5" height="44.5" fill="none" stroke="#1F3B61" stroke-width="3"/><text x="19" y="33" font-family="Instrument Sans, system-ui, sans-serif" font-size="25" font-weight="500" fill="#1F3B61">G</text><text x="56" y="33" font-family="Instrument Sans, system-ui, sans-serif" font-size="25" font-weight="500" fill="#1F3B61">W</text></svg>
+          <span>Getchell<br>Wellness</span>
+        </a>
+        <p>Ethan Getchell, MSW. Men's mental health speaker, clinician, and writer. Keynotes and trainings for construction crews, retreats for the men who lead them, and one-on-one work for the ones who need more.</p>
+      </div>
+      <div><p class="footer__label">Work</p><ul><li><a href="speaking.html">Speaking</a></li><li><a href="retreats.html">Men's Retreats</a></li><li><a href="therapy.html">One-on-one</a></li><li><a href="contact.html">Book a call</a></li></ul></div>
+      <div><p class="footer__label">Ethan</p><ul><li><a href="about.html">About</a></li><li><a href="about.html#austin">Austin's story</a></li><li><a href="https://www.amazon.com/Things-my-Pocket-Ethan-Getchell-ebook/dp/B0CBHRQ34C" target="_blank" rel="noopener">Things in My Pocket</a></li><li><a href="https://ethangetchell.substack.com" target="_blank" rel="noopener">Writing</a></li></ul></div>
+      <div><p class="footer__label">Elsewhere</p><ul><li><a href="https://www.instagram.com/ethangetchell/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.linkedin.com/in/ethangetchell" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://ethangetchell.substack.com" target="_blank" rel="noopener">Substack</a></li><li><a href="https://www.facebook.com/ethan.getchell.9/" target="_blank" rel="noopener">Facebook</a></li></ul></div>
+    </div>
+    <div class="footer__crisis"><b>988</b><span>If you or someone on your crew is in crisis right now, call or text 988. The Suicide &amp; Crisis Lifeline is free, confidential, and open 24/7.</span></div>
+    <div class="footer__bar"><span>© 2026 Getchell Wellness · Ethan Getchell, MSW. All rights reserved.</span><span>Privacy · Terms</span></div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js?v=7"></script>
+
+<div class="lab" role="group" aria-label="Colour options">
+  <button data-t="" style="--sw:#0B0F17"><i></i><span>Mono</span></button>
+  <button data-t="t-yellow" style="--sw:#F2C500"><i></i><span>Safety yellow</span></button>
+  <button data-t="t-blue" style="--sw:#2456A6"><i></i><span>Blueprint blue</span></button>
+  <button data-t="t-orange" style="--sw:#E4541E"><i></i><span>Legacy orange</span></button>
+  <button data-t="t-duo" style="--sw:#F2C500; background: linear-gradient(90deg,#1F3B61 50%,#F2C500 50%)"><i style="background:linear-gradient(90deg,#1F3B61 50%,#F2C500 50%)"></i><span>Blue + yellow</span></button>
+  <button data-t="t-forest" style="--sw:#2F5D3A"><i></i><span>Forest</span></button>
+</div>
+<script>
+(function(){
+  var html=document.documentElement, btns=document.querySelectorAll('.lab button');
+  function apply(t){ html.className=html.className.replace(/\bt-\w+/g,'').trim(); if(t) html.classList.add(t); btns.forEach(function(b){ b.classList.toggle('on', b.dataset.t===t); }); try{localStorage.setItem('gw-lab',t);}catch(e){} }
+  var q=new URLSearchParams(location.search).get('t'); var saved=null; try{saved=localStorage.getItem('gw-lab');}catch(e){}
+  apply(q!==null?q:(saved||'t-yellow'));
+  btns.forEach(function(b){ b.addEventListener('click',function(){ apply(b.dataset.t); }); });
+})();
+</script>
+</body>
+</html>

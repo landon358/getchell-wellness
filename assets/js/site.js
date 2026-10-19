@@ -1,7 +1,9 @@
 (function () {
+  // The `js` class is set by an inline script in <head> so reveal state applies before first paint.
   document.documentElement.classList.add('js');
   var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var useGsap = !reduced && window.gsap && window.ScrollTrigger;
+  var EASE = 'power3.out';
 
   // Mark the current page in nav + menu
   var path = location.pathname.split('/').pop() || 'index.html';
@@ -25,10 +27,28 @@
     });
   }
 
+  // Page-to-page fade: internal links fade the page out before navigating
+  if (!reduced) {
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href]');
+      if (!a) return;
+      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      if (a.target && a.target !== '_self') return;
+      var href = a.getAttribute('href');
+      if (!href || href.charAt(0) === '#' || /^(https?:|mailto:|tel:)/i.test(href)) return;
+      if (href.split('#')[0] === path) return;
+      e.preventDefault();
+      document.body.classList.remove('menu-open');
+      document.documentElement.classList.add('leaving');
+      setTimeout(function () { location.href = href; }, 200);
+    });
+    window.addEventListener('pageshow', function () { document.documentElement.classList.remove('leaving'); });
+  }
+
   // Stagger siblings that share a parent with data-stagger (CSS fallback path)
   document.querySelectorAll('[data-stagger]').forEach(function (parent) {
     Array.prototype.forEach.call(parent.children, function (child, i) {
-      child.style.setProperty('--d', (i * 0.09) + 's');
+      child.style.setProperty('--d', (i * 0.06) + 's');
     });
   });
 
@@ -38,45 +58,57 @@
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var note = form.querySelector('.form__note');
-      if (note) { note.hidden = false; note.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+      if (!note) return;
+      note.hidden = false;
+      void note.offsetHeight; // commit the unhidden state before transitioning
+      setTimeout(function () { note.classList.add('is-shown'); }, 16);
+      note.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'center' });
     });
   }
 
   if (useGsap) {
     gsap.registerPlugin(ScrollTrigger);
     document.documentElement.classList.add('gsap');
-    var ease = 'power3.out';
 
-    // ---- Hero intro -------------------------------------------------
+    // ---- Hero intro: full on the first page of a visit, compact afterwards ----
+    var seen = false;
+    try { seen = sessionStorage.getItem('gw-intro') === '1'; sessionStorage.setItem('gw-intro', '1'); } catch (err) {}
+
     var hero = document.querySelector('.hero, .page-hero');
     var h1 = hero && hero.querySelector('h1');
     var heroEls = hero ? Array.prototype.slice.call(hero.querySelectorAll('.reveal')) : [];
     heroEls.forEach(function (el) { el.classList.add('gsap-hero'); });
-
-    if (h1) {
-      var words = h1.textContent.trim().split(/\s+/);
-      h1.innerHTML = words.map(function (w) { return '<span class="w"><span class="wi">' + w + '</span></span>'; }).join(' ');
-    }
-
     var lede = hero && hero.querySelector('.lede');
     var actions = hero && hero.querySelector('.actions');
     var photo = hero && hero.querySelector('.hero__photo, .page-hero__photo');
 
     gsap.set(heroEls, { autoAlpha: 1, y: 0, clearProps: 'transform' });
-    var tl = gsap.timeline({ defaults: { ease: ease } });
-    tl.from('.nav', { y: -10, autoAlpha: 0, duration: 0.8 }, 0);
-    if (h1) tl.from(h1.querySelectorAll('.wi'), { yPercent: 110, duration: 1.1, stagger: 0.05 }, 0.15);
-    if (lede) tl.from(lede, { y: 18, autoAlpha: 0, duration: 0.9 }, 0.55);
-    if (actions) tl.from(actions, { y: 18, autoAlpha: 0, duration: 0.9 }, 0.7);
-    if (photo) tl.from(photo, { autoAlpha: 0, scale: 1.04, y: 24, duration: 1.4, ease: 'power4.out' }, 0.6);
+    var tl = gsap.timeline({ defaults: { ease: EASE } });
+
+    if (!seen) {
+      if (h1) {
+        var words = h1.textContent.trim().split(/\s+/);
+        h1.innerHTML = words.map(function (w) { return '<span class="w"><span class="wi">' + w + '</span></span>'; }).join(' ');
+      }
+      tl.from('.nav', { y: -10, autoAlpha: 0, duration: 0.8 }, 0);
+      if (h1) tl.from(h1.querySelectorAll('.wi'), { yPercent: 110, duration: 1.1, stagger: 0.05 }, 0.15);
+      if (lede) tl.from(lede, { y: 18, autoAlpha: 0, duration: 0.9 }, 0.55);
+      if (actions) tl.from(actions, { y: 18, autoAlpha: 0, duration: 0.9 }, 0.7);
+      if (photo) tl.from(photo, { autoAlpha: 0, scale: 1.04, y: 24, duration: 1.4, ease: 'power4.out' }, 0.6);
+    } else {
+      if (h1) tl.from(h1, { y: 12, autoAlpha: 0, duration: 0.5 }, 0);
+      if (lede) tl.from(lede, { y: 10, autoAlpha: 0, duration: 0.45 }, 0.08);
+      if (actions) tl.from(actions, { y: 10, autoAlpha: 0, duration: 0.45 }, 0.14);
+      if (photo) tl.from(photo, { autoAlpha: 0, y: 12, duration: 0.6 }, 0.1);
+    }
 
     // ---- Scroll reveals ---------------------------------------------
     var rest = Array.prototype.filter.call(document.querySelectorAll('.reveal'), function (el) { return !el.classList.contains('gsap-hero'); });
     gsap.set(rest, { autoAlpha: 0, y: 22 });
     ScrollTrigger.batch(rest, {
-      start: 'top 90%',
+      start: 'top 92%',
       once: true,
-      onEnter: function (batch) { gsap.to(batch, { autoAlpha: 1, y: 0, duration: 1, ease: ease, stagger: 0.09, overwrite: true }); }
+      onEnter: function (batch) { gsap.to(batch, { autoAlpha: 1, y: 0, duration: 0.7, ease: EASE, stagger: 0.06, overwrite: true }); }
     });
 
     // ---- Photo parallax ---------------------------------------------
@@ -98,7 +130,7 @@
       var obj = { v: 0 };
       node.nodeValue = prefix + '0' + suffix;
       gsap.to(obj, {
-        v: target, duration: 1.4, ease: 'power2.out',
+        v: target, duration: 1.2, ease: EASE,
         scrollTrigger: { trigger: b, start: 'top 85%', once: true },
         onUpdate: function () { node.nodeValue = prefix + Math.round(obj.v) + suffix; }
       });

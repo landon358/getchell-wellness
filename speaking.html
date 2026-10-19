@@ -8,10 +8,11 @@
 <link rel="icon" href="assets/img/gw-logo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/site.css?v=7">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css?v=9">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
 <header class="nav">
   <div class="nav__in">
@@ -21,7 +22,7 @@
       <a href="therapy.html">One-on-one</a>
     </nav>
     <a class="logo" href="index.html" aria-label="Getchell Wellness home">
-      <svg viewBox="0 0 104 48" aria-hidden="true"><rect x="1.75" y="1.75" width="100.5" height="44.5" fill="none" stroke="#1F3B61" stroke-width="3"/><text x="19" y="33" font-family="Plus Jakarta Sans, system-ui, sans-serif" font-size="25" font-weight="500" fill="#1F3B61">G</text><text x="56" y="33" font-family="Plus Jakarta Sans, system-ui, sans-serif" font-size="25" font-weight="500" fill="#1F3B61">W</text></svg>
+      <svg viewBox="0 0 104 48" aria-hidden="true"><rect x="1.75" y="1.75" width="100.5" height="44.5" fill="none" stroke="#1F3B61" stroke-width="3"/><text x="19" y="33" font-family="Public Sans, system-ui, sans-serif" font-size="25" font-weight="500" fill="#1F3B61">G</text><text x="56" y="33" font-family="Public Sans, system-ui, sans-serif" font-size="25" font-weight="500" fill="#1F3B61">W</text></svg>
       <span>Getchell<br>Wellness</span>
     </a>
     <nav class="nav__side nav__side--right" aria-label="Secondary">
@@ -45,7 +46,7 @@
   <div class="menu__foot">If you're in crisis, call or text 988.</div>
 </div>
 
-<main>
+<main id="main">
 
 <section class="page-hero">
   <div class="wrap">
@@ -56,7 +57,7 @@
       <a class="btn btn--ghost" href="#formats">Formats</a>
     </div>
   </div>
-  <div class="page-hero__photo"><img src="assets/img/hero-speaking.jpg" alt="Ethan Getchell presenting to a room of construction workers" style="object-position: center 60%"></div>
+  <div class="page-hero__photo"><img fetchpriority="high" decoding="async" src="assets/img/hero-speaking.jpg" alt="Ethan Getchell presenting to a room of construction workers" style="object-position: center 60%"></div>
 </section>
 
 <!-- THE PROBLEM -->
@@ -70,12 +71,12 @@
         <p>I come from three generations of construction workers. In 2022 I lost my 16-year-old brother Austin to suicide. That loss took me out of the trades and into social work, where I now help men navigate the same things my family faced.</p>
       </div>
     </div>
-    <div class="photo photo--3x4 reveal" style="--d:.1s"><img src="assets/img/crew-breakroom.jpg" alt="A packed break room of crew members in hard hats watching Hope in Hard Hats"><span class="caption">Break room · safety meeting</span></div>
+    <div class="photo photo--3x4 reveal" style="--d:.1s"><img loading="lazy" decoding="async" src="assets/img/crew-breakroom.jpg" alt="A packed break room of crew members in hard hats watching Hope in Hard Hats"><span class="caption">Break room · safety meeting</span></div>
   </div>
 </section>
 
 <!-- WALK AWAY WITH -->
-<section class="section section--dark on-dark">
+<section class="section">
   <div class="wrap split" style="align-items:start">
     <div class="reveal">
       <h2>Not inspired and forgetful. Ready.</h2>
@@ -108,7 +109,7 @@
 </section>
 
 <!-- HOW IT WORKS -->
-<section class="section section--cream-2">
+<section class="section">
   <div class="wrap">
     <div class="section-head reveal">
       <h2>No complicated rollout. No lengthy onboarding.</h2>
@@ -132,12 +133,12 @@
         <div class="card"><h4>What Really Matters</h4><p>Turning pain into purpose. The story of Austin, and what a letter to a brother taught me about grief and hope.</p></div>
       </div>
     </div>
-    <div class="photo photo--3x4 reveal" style="--d:.1s"><img src="assets/img/office-audience.jpg" alt="Ethan presenting Hope in Hard Hats to an office audience"><span class="caption">Also for the office side</span></div>
+    <div class="photo photo--3x4 reveal" style="--d:.1s"><img loading="lazy" decoding="async" src="assets/img/office-audience.jpg" alt="Ethan presenting Hope in Hard Hats to an office audience"><span class="caption">Also for the office side</span></div>
   </div>
 </section>
 
 <!-- LETTER -->
-<section class="section section--white">
+<section class="section">
   <div class="wrap--narrow center reveal">
     <blockquote class="quote">"Ethan was able to leverage his unique background and personal story and tailor it specifically to the construction industry, and to men in particular. His speech was a turning point for our organization and demonstrated help is out there. Please select Ethan for your next event. You will not regret it."</blockquote>
     <div class="cite"><strong>Dan Hoffman</strong>, Senior Project Manager, Clark Contracting Services</div>
@@ -153,8 +154,8 @@
 <!-- PHOTOS -->
 <section class="section section--tight">
   <div class="wrap grid grid--2" data-stagger>
-    <div class="photo photo--4x3 reveal"><img src="assets/img/crew-wide.jpg" alt="Wide shot of a lunchroom audience with Ethan speaking on the right"></div>
-    <div class="photo photo--4x3 reveal"><img src="assets/img/ethan-slide.jpg" alt="Ethan presenting in front of a slide on suicide among construction workers"></div>
+    <div class="photo photo--4x3 reveal"><img loading="lazy" decoding="async" src="assets/img/crew-wide.jpg" alt="Wide shot of a lunchroom audience with Ethan speaking on the right"></div>
+    <div class="photo photo--4x3 reveal"><img loading="lazy" decoding="async" src="assets/img/ethan-slide.jpg" alt="Ethan presenting in front of a slide on suicide among construction workers"></div>
   </div>
 </section>
 
@@ -176,11 +177,11 @@
 </section>
 
 <!-- CTA -->
-<section class="section section--orange">
+<section class="section">
   <div class="wrap--narrow center reveal">
     <h2>Book Ethan for your next safety meeting.</h2>
     <p class="lede">Help your team start the conversation. One call is all it takes to find out if this is the right fit.</p>
-    <div class="actions"><a class="btn btn--white" href="contact.html">Check a date <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <div class="actions"><a class="btn" href="contact.html">Check a date <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </div>
 </section>
 
@@ -191,20 +192,20 @@
     <div class="footer__grid">
       <div>
         <a class="logo" href="index.html" aria-label="Getchell Wellness home">
-          <svg viewBox="0 0 104 48" aria-hidden="true"><rect x="1.75" y="1.75" width="100.5" height="44.5" fill="none" stroke="#1F3B61" stroke-width="3"/><text x="19" y="33" font-family="Plus Jakarta Sans, system-ui, sans-serif" font-size="25" font-weight="500" fill="#1F3B61">G</text><text x="56" y="33" font-family="Plus Jakarta Sans, system-ui, sans-serif" font-size="25" font-weight="500" fill="#1F3B61">W</text></svg>
+          <svg viewBox="0 0 104 48" aria-hidden="true"><rect x="1.75" y="1.75" width="100.5" height="44.5" fill="none" stroke="#1F3B61" stroke-width="3"/><text x="19" y="33" font-family="Public Sans, system-ui, sans-serif" font-size="25" font-weight="500" fill="#1F3B61">G</text><text x="56" y="33" font-family="Public Sans, system-ui, sans-serif" font-size="25" font-weight="500" fill="#1F3B61">W</text></svg>
           <span>Getchell<br>Wellness</span>
         </a>
         <p>Ethan Getchell, MSW. Men's mental health speaker, clinician, and writer. Keynotes and trainings for construction crews, retreats for the men who lead them, and one-on-one work for the ones who need more.</p>
       </div>
-      <div><h5>Work</h5><ul><li><a href="speaking.html">Speaking</a></li><li><a href="retreats.html">Men's Retreats</a></li><li><a href="therapy.html">One-on-one</a></li><li><a href="contact.html">Book a call</a></li></ul></div>
-      <div><h5>Ethan</h5><ul><li><a href="about.html">About</a></li><li><a href="about.html#austin">Austin's story</a></li><li><a href="https://www.amazon.com/Things-my-Pocket-Ethan-Getchell-ebook/dp/B0CBHRQ34C" target="_blank" rel="noopener">Things in My Pocket</a></li><li><a href="https://ethangetchell.substack.com" target="_blank" rel="noopener">Writing</a></li></ul></div>
-      <div><h5>Elsewhere</h5><ul><li><a href="https://www.instagram.com/ethangetchell/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.linkedin.com/in/ethangetchell" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://ethangetchell.substack.com" target="_blank" rel="noopener">Substack</a></li><li><a href="https://www.facebook.com/ethan.getchell.9/" target="_blank" rel="noopener">Facebook</a></li></ul></div>
+      <div><p class="footer__label">Work</p><ul><li><a href="speaking.html">Speaking</a></li><li><a href="retreats.html">Men's Retreats</a></li><li><a href="therapy.html">One-on-one</a></li><li><a href="contact.html">Book a call</a></li></ul></div>
+      <div><p class="footer__label">Ethan</p><ul><li><a href="about.html">About</a></li><li><a href="about.html#austin">Austin's story</a></li><li><a href="https://www.amazon.com/Things-my-Pocket-Ethan-Getchell-ebook/dp/B0CBHRQ34C" target="_blank" rel="noopener">Things in My Pocket</a></li><li><a href="https://ethangetchell.substack.com" target="_blank" rel="noopener">Writing</a></li></ul></div>
+      <div><p class="footer__label">Elsewhere</p><ul><li><a href="https://www.instagram.com/ethangetchell/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.linkedin.com/in/ethangetchell" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://ethangetchell.substack.com" target="_blank" rel="noopener">Substack</a></li><li><a href="https://www.facebook.com/ethan.getchell.9/" target="_blank" rel="noopener">Facebook</a></li></ul></div>
     </div>
     <div class="footer__crisis"><b>988</b><span>If you or someone on your crew is in crisis right now, call or text 988. The Suicide &amp; Crisis Lifeline is free, confidential, and open 24/7.</span></div>
     <div class="footer__bar"><span>© 2026 Getchell Wellness · Ethan Getchell, MSW. All rights reserved.</span><span>Privacy · Terms</span></div>
   </div>
 </footer>
 
-<script src="assets/js/site.js?v=3"></script>
+<script src="assets/js/site.js?v=4"></script>
 </body>
 </html>

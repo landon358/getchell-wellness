@@ -1,4 +1,5 @@
 (function () {
+  document.documentElement.classList.add('js');
   // Mark the current page in nav + menu
   var path = location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav__side a:not(.btn), .menu a:not(.btn)').forEach(function (a) {

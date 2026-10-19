@@ -8,10 +8,11 @@
 <link rel="icon" href="assets/img/gw-logo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/site.css?v=7">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css?v=9">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
 <header class="nav">
   <div class="nav__in">
@@ -21,7 +22,7 @@
       <a href="therapy.html">One-on-one</a>
     </nav>
     <a class="logo" href="index.html" aria-label="Getchell Wellness home">
-      <svg viewBox="0 0 104 48" aria-hidden="true"><rect x="1.75" y="1.75" width="100.5" height="44.5" fill="none" stroke="#1F3B61" stroke-width="3"/><text x="19" y="33" font-family="Plus Jakarta Sans, system-ui, sans-serif" font-size="25" font-weight="500" fill="#1F3B61">G</text><text x="56" y="33" font-family="Plus Jakarta Sans, system-ui, sans-serif" font-size="25" font-weight="500" fill="#1F3B61">W</text></svg>
+      <svg viewBox="0 0 104 48" aria-hidden="true"><rect x="1.75" y="1.75" width="100.5" height="44.5" fill="none" stroke="#1F3B61" stroke-width="3"/><text x="19" y="33" font-family="Public Sans, system-ui, sans-serif" font-size="25" font-weight="500" fill="#1F3B61">G</text><text x="56" y="33" font-family="Public Sans, system-ui, sans-serif" font-size="25" font-weight="500" fill="#1F3B61">W</text></svg>
       <span>Getchell<br>Wellness</span>
     </a>
     <nav class="nav__side nav__side--right" aria-label="Secondary">
@@ -45,7 +46,7 @@
   <div class="menu__foot">If you're in crisis, call or text 988.</div>
 </div>
 
-<main>
+<main id="main">
 
 <section class="page-hero">
   <div class="wrap">
@@ -56,7 +57,7 @@
       <a class="btn btn--ghost" href="#expect">What to expect</a>
     </div>
   </div>
-  <div class="page-hero__photo"><img src="assets/img/ethan-smile.jpg" alt="Ethan Getchell, smiling" style="object-position: center 48%"></div>
+  <div class="page-hero__photo"><img fetchpriority="high" decoding="async" src="assets/img/ethan-smile.jpg" alt="Ethan Getchell, smiling" style="object-position: center 48%"></div>
 </section>
 
 <section class="section--tight">
@@ -83,16 +84,16 @@
 </section>
 
 <!-- EXPECT -->
-<section class="section section--dark on-dark" id="expect">
+<section class="section" id="expect">
   <div class="wrap">
     <div class="section-head reveal">
       <h2>No couch. No jargon. No "and how does that make you feel."</h2>
       <p class="lede">You'll get someone trained in the clinic who talks like someone from the job site, because I am.</p>
     </div>
     <div class="grid grid--3" data-stagger>
-      <div class="card card--dark reveal"><h3>Structured, not soft.</h3><p>Trained in CBT, DBT, and trauma-informed care at Michigan Medicine. We set goals, we track them, and you leave each session with something to do.</p></div>
-      <div class="card card--dark reveal"><h3>Video, from wherever you are.</h3><p>Sessions over secure video. No travel, no waiting room, no running into someone from work. Michigan residents to start.</p></div>
-      <div class="card card--dark reveal"><h3>The first call is free.</h3><p>Twenty minutes to find out if we're a fit. If we're not, I'll tell you and point you to someone who is. No pitch.</p></div>
+      <div class="card reveal"><h3>Structured, not soft.</h3><p>Trained in CBT, DBT, and trauma-informed care at Michigan Medicine. We set goals, we track them, and you leave each session with something to do.</p></div>
+      <div class="card reveal"><h3>Video, from wherever you are.</h3><p>Sessions over secure video. No travel, no waiting room, no running into someone from work. Michigan residents to start.</p></div>
+      <div class="card reveal"><h3>The first call is free.</h3><p>Twenty minutes to find out if we're a fit. If we're not, I'll tell you and point you to someone who is. No pitch.</p></div>
     </div>
   </div>
 </section>
@@ -114,18 +115,18 @@
 </section>
 
 <!-- CRISIS -->
-<section class="section--tight section--cream-2" style="padding-block:3rem">
+<section class="section--tight" style="padding-block:3rem">
   <div class="wrap--narrow">
     <div class="crisis reveal"><b>988</b><span><strong>If you're in crisis right now, don't wait for a call back.</strong> Call or text 988, the Suicide &amp; Crisis Lifeline. It's free, confidential, and open all day, every day. One-on-one work with me is for prevention and early intervention. If you're already there, 988 is the first call to make.</span></div>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="section section--orange">
+<section class="section">
   <div class="wrap--narrow center reveal">
     <h2>You've carried it long enough.</h2>
     <p class="lede">Request a free call. I read every message myself, and you'll hear back within one business day.</p>
-    <div class="actions"><a class="btn btn--white" href="contact.html">Request a free call <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <div class="actions"><a class="btn" href="contact.html">Request a free call <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </div>
 </section>
 
@@ -136,20 +137,20 @@
     <div class="footer__grid">
       <div>
         <a class="logo" href="index.html" aria-label="Getchell Wellness home">
-          <svg viewBox="0 0 104 48" aria-hidden="true"><rect x="1.75" y="1.75" width="100.5" height="44.5" fill="none" stroke="#1F3B61" stroke-width="3"/><text x="19" y="33" font-family="Plus Jakarta Sans, system-ui, sans-serif" font-size="25" font-weight="500" fill="#1F3B61">G</text><text x="56" y="33" font-family="Plus Jakarta Sans, system-ui, sans-serif" font-size="25" font-weight="500" fill="#1F3B61">W</text></svg>
+          <svg viewBox="0 0 104 48" aria-hidden="true"><rect x="1.75" y="1.75" width="100.5" height="44.5" fill="none" stroke="#1F3B61" stroke-width="3"/><text x="19" y="33" font-family="Public Sans, system-ui, sans-serif" font-size="25" font-weight="500" fill="#1F3B61">G</text><text x="56" y="33" font-family="Public Sans, system-ui, sans-serif" font-size="25" font-weight="500" fill="#1F3B61">W</text></svg>
           <span>Getchell<br>Wellness</span>
         </a>
         <p>Ethan Getchell, MSW. Men's mental health speaker, clinician, and writer. Keynotes and trainings for construction crews, retreats for the men who lead them, and one-on-one work for the ones who need more.</p>
       </div>
-      <div><h5>Work</h5><ul><li><a href="speaking.html">Speaking</a></li><li><a href="retreats.html">Men's Retreats</a></li><li><a href="therapy.html">One-on-one</a></li><li><a href="contact.html">Book a call</a></li></ul></div>
-      <div><h5>Ethan</h5><ul><li><a href="about.html">About</a></li><li><a href="about.html#austin">Austin's story</a></li><li><a href="https://www.amazon.com/Things-my-Pocket-Ethan-Getchell-ebook/dp/B0CBHRQ34C" target="_blank" rel="noopener">Things in My Pocket</a></li><li><a href="https://ethangetchell.substack.com" target="_blank" rel="noopener">Writing</a></li></ul></div>
-      <div><h5>Elsewhere</h5><ul><li><a href="https://www.instagram.com/ethangetchell/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.linkedin.com/in/ethangetchell" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://ethangetchell.substack.com" target="_blank" rel="noopener">Substack</a></li><li><a href="https://www.facebook.com/ethan.getchell.9/" target="_blank" rel="noopener">Facebook</a></li></ul></div>
+      <div><p class="footer__label">Work</p><ul><li><a href="speaking.html">Speaking</a></li><li><a href="retreats.html">Men's Retreats</a></li><li><a href="therapy.html">One-on-one</a></li><li><a href="contact.html">Book a call</a></li></ul></div>
+      <div><p class="footer__label">Ethan</p><ul><li><a href="about.html">About</a></li><li><a href="about.html#austin">Austin's story</a></li><li><a href="https://www.amazon.com/Things-my-Pocket-Ethan-Getchell-ebook/dp/B0CBHRQ34C" target="_blank" rel="noopener">Things in My Pocket</a></li><li><a href="https://ethangetchell.substack.com" target="_blank" rel="noopener">Writing</a></li></ul></div>
+      <div><p class="footer__label">Elsewhere</p><ul><li><a href="https://www.instagram.com/ethangetchell/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.linkedin.com/in/ethangetchell" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://ethangetchell.substack.com" target="_blank" rel="noopener">Substack</a></li><li><a href="https://www.facebook.com/ethan.getchell.9/" target="_blank" rel="noopener">Facebook</a></li></ul></div>
     </div>
     <div class="footer__crisis"><b>988</b><span>If you or someone on your crew is in crisis right now, call or text 988. The Suicide &amp; Crisis Lifeline is free, confidential, and open 24/7.</span></div>
     <div class="footer__bar"><span>© 2026 Getchell Wellness · Ethan Getchell, MSW. All rights reserved.</span><span>Privacy · Terms</span></div>
   </div>
 </footer>
 
-<script src="assets/js/site.js?v=3"></script>
+<script src="assets/js/site.js?v=4"></script>
 </body>
 </html>

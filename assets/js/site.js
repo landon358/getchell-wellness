@@ -87,8 +87,18 @@
 
     if (!seen) {
       if (h1) {
-        var words = h1.textContent.trim().split(/\s+/);
-        h1.innerHTML = words.map(function (w) { return '<span class="w"><span class="wi">' + w + '</span></span>'; }).join(' ');
+        // Wrap each word in a mask, keeping any <mark> highlight intact around its words
+        var wrapWords = function (text) {
+          return text.split(/(\s+)/).map(function (t) {
+            return /^\s+$/.test(t) ? t : (t ? '<span class="w"><span class="wi">' + t + '</span></span>' : '');
+          }).join('');
+        };
+        var out = '';
+        Array.prototype.forEach.call(h1.childNodes, function (n) {
+          if (n.nodeType === 3) out += wrapWords(n.nodeValue);
+          else if (n.nodeType === 1) out += '<' + n.tagName.toLowerCase() + ' class="' + n.className + '">' + wrapWords(n.textContent) + '</' + n.tagName.toLowerCase() + '>';
+        });
+        h1.innerHTML = out.trim();
       }
       tl.from('.nav', { y: -10, autoAlpha: 0, duration: 0.8 }, 0);
       if (h1) tl.from(h1.querySelectorAll('.wi'), { yPercent: 110, duration: 1.1, stagger: 0.05 }, 0.15);

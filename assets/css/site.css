@@ -104,10 +104,14 @@ mark.hi { background: linear-gradient(transparent 62%, var(--yellow) 62%); color
 }
 .btn:hover { background: var(--blue-2); border-color: var(--blue-2); }
 .btn:active { transform: scale(0.97); }
-.btn svg { width: 1rem; height: 1rem; stroke: currentColor; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; transition: transform 200ms var(--ease-out); }
+.btn:has(.btn__icon) { padding: 0.5rem 0.5rem 0.5rem 1.4rem; }
+.btn__icon { flex: none; width: 2rem; height: 2rem; border-radius: 50%; display: grid; place-items: center; background: rgba(255,255,255,0.14); transition: transform 220ms var(--ease-out), background-color var(--dur-hover) ease; }
+.btn__icon svg { width: 0.9rem; height: 0.9rem; stroke: currentColor; stroke-width: 1.5; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.btn--ghost .btn__icon { background: rgba(11,15,23,0.06); }
 @media (hover: hover) and (pointer: fine) {
   .btn:hover { transform: translateY(-1px); }
-  .btn:hover svg { transform: translateX(3px); }
+  .btn:hover .btn__icon { transform: translate(2px, -2px) scale(1.06); background: rgba(255,255,255,0.24); }
+  .btn--ghost:hover .btn__icon { background: rgba(11,15,23,0.1); }
 }
 .btn--ghost { background: transparent; color: var(--ink); border-color: var(--line-2); }
 .btn--ghost:hover { background: var(--fill); border-color: var(--ink); transform: none; }
@@ -115,7 +119,7 @@ mark.hi { background: linear-gradient(transparent 62%, var(--yellow) 62%); color
 .center .actions { justify-content: center; }
 .link { display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 600; color: var(--blue); border-bottom: 1px solid transparent; transition: border-color var(--dur-hover) ease; }
 .link:hover { border-color: var(--blue); }
-.link svg { width: 0.9rem; height: 0.9rem; stroke: currentColor; stroke-width: 2; fill: none; stroke-linecap: round; transition: transform 200ms var(--ease-out); }
+.link svg { width: 0.9rem; height: 0.9rem; stroke: currentColor; stroke-width: 1.5; fill: none; stroke-linecap: round; transition: transform 200ms var(--ease-out); }
 @media (hover: hover) and (pointer: fine) { .link:hover svg { transform: translateX(3px); } }
 
 /* ---------- nav: sticky, blurred, hairline ---------- */
@@ -141,7 +145,7 @@ body.menu-open .burger span:nth-child(1) { transform: rotate(45deg); }
 body.menu-open .burger span:nth-child(2) { transform: rotate(-45deg); }
 @media (min-width: 960px) { .nav__side { display: flex; } .burger { display: none; } }
 
-.menu { position: fixed; inset: 0; z-index: 15; background: var(--bg); display: grid; place-items: center; opacity: 0; visibility: hidden; transition: opacity 300ms var(--ease-out), visibility 0s linear 300ms; }
+.menu { position: fixed; inset: 0; z-index: 15; background: rgba(255,255,255,0.82); backdrop-filter: blur(28px) saturate(1.3); -webkit-backdrop-filter: blur(28px) saturate(1.3); display: grid; place-items: center; opacity: 0; visibility: hidden; transition: opacity 300ms var(--ease-out), visibility 0s linear 300ms; }
 body.menu-open .menu { opacity: 1; visibility: visible; transition: opacity 300ms var(--ease-out); }
 body.menu-open { overflow: hidden; }
 .menu ul { text-align: center; }
@@ -159,7 +163,7 @@ body.menu-open .menu a { transform: none; opacity: 1; }
 .hero__text h1 { max-width: 9.5em; margin: 0; }
 .hero__text .lede { margin-top: 0.5rem; }
 @media (min-width: 960px) { .hero__text { grid-template-columns: 1.15fr 0.85fr; align-items: end; } .hero__text h1 { grid-row: 1 / span 2; } .hero__text .lede { grid-column: 2; margin: 0; } .hero__text .actions { grid-column: 2; margin-top: 1.5rem; } }
-.hero__photo { width: min(var(--maxw), 100% - 2 * var(--gutter)); margin: clamp(3rem, 6vw, 5rem) auto 0; position: relative; border-radius: var(--r-lg); overflow: hidden; aspect-ratio: 16 / 8; background: var(--fill); }
+.hero__photo { width: min(var(--maxw), 100% - 2 * var(--gutter)); margin: clamp(3rem, 6vw, 5rem) auto 0; position: relative; border-radius: var(--r-lg); overflow: hidden; aspect-ratio: 16 / 8; background: var(--fill); box-shadow: 0 0 0 6px var(--fill), 0 0 0 7px rgba(11,15,23,0.06), 0 40px 80px -48px rgba(11,15,23,0.35); }
 .hero__photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 70%; }
 @media (max-width: 720px) { .hero__photo { aspect-ratio: 4 / 5; border-radius: var(--r); } .hero__photo img { object-position: 40% 75%; } }
 
@@ -170,7 +174,7 @@ body.menu-open .menu a { transform: none; opacity: 1; }
 .page-hero h1 { max-width: 9.5em; margin: 0; }
 .page-hero .lede { margin-top: 0.5rem; }
 @media (min-width: 960px) { .page-hero > .wrap { grid-template-columns: 1.15fr 0.85fr; align-items: end; } .page-hero h1 { grid-row: 1 / span 2; } .page-hero .lede { grid-column: 2; margin: 0; } .page-hero .actions { grid-column: 2; margin-top: 1.5rem; justify-content: flex-start; } }
-.page-hero__photo { width: min(var(--maxw), 100% - 2 * var(--gutter)); margin: clamp(2.5rem, 5vw, 4rem) auto 0; position: relative; border-radius: var(--r-lg); overflow: hidden; aspect-ratio: 16 / 7; background: var(--fill); }
+.page-hero__photo { width: min(var(--maxw), 100% - 2 * var(--gutter)); margin: clamp(2.5rem, 5vw, 4rem) auto 0; position: relative; border-radius: var(--r-lg); overflow: hidden; aspect-ratio: 16 / 7; background: var(--fill); box-shadow: 0 0 0 6px var(--fill), 0 0 0 7px rgba(11,15,23,0.06), 0 40px 80px -48px rgba(11,15,23,0.35); }
 .page-hero__photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 @media (max-width: 720px) { .page-hero__photo { aspect-ratio: 4 / 5; border-radius: var(--r); } }
 
@@ -242,11 +246,13 @@ a.card { transition: transform 200ms var(--ease-out); }
 
 /* ---------- dark call-to-action panel ---------- */
 
-.cta .wrap--narrow { width: min(var(--maxw), 100% - 2 * var(--gutter)); background: var(--blue); color: #fff; border-radius: var(--r-lg); padding: clamp(3rem, 7vw, 6.5rem) var(--gutter); }
+.cta .wrap--narrow { width: min(var(--maxw), 100% - 2 * var(--gutter)); background: var(--blue); color: #fff; border-radius: var(--r-lg); padding: clamp(3rem, 7vw, 6.5rem) var(--gutter); box-shadow: 0 0 0 6px var(--fill), 0 0 0 7px rgba(11,15,23,0.06), 0 48px 90px -50px rgba(31,59,97,0.55); }
 .cta h2 { color: #fff; max-width: 14em; margin-inline: auto; }
 .cta .lede { color: rgba(255,255,255,0.78); }
 .cta .btn { background: var(--yellow); color: var(--yellow-ink); border-color: var(--yellow); }
 .cta .btn:hover { background: #E6BB00; border-color: #E6BB00; }
+.cta .btn .btn__icon { background: rgba(11,15,23,0.1); }
+.cta .btn:hover .btn__icon { background: rgba(11,15,23,0.16); }
 
 /* ---------- forms ---------- */
 
@@ -288,13 +294,13 @@ html.gsap .reveal { transition: none; }
 .wi { display: inline-block; }
 .nav.is-scrolled { box-shadow: 0 12px 32px -24px rgba(11,15,23,0.35); }
 
-.js .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.7s var(--ease-out), transform 0.8s var(--ease-out); transition-delay: var(--d, 0s); }
-.js .reveal.in { opacity: 1; transform: none; }
+.js .reveal { opacity: 0; transform: translateY(16px); filter: blur(6px); transition: opacity 0.7s var(--ease-out), transform 0.8s var(--ease-out), filter 0.7s var(--ease-out); transition-delay: var(--d, 0s); }
+.js .reveal.in { opacity: 1; transform: none; filter: blur(0); }
 .js .hero__photo.reveal { transition-duration: 1.3s, 1.5s; }
 .js .hero__photo.reveal:not(.in) { transform: translateY(24px) scale(0.985); }
 @media (prefers-reduced-motion: reduce) {
   /* fewer and gentler, not none: keep opacity and colour, drop movement */
-  .js .reveal { transform: none; transition: opacity 200ms ease; transition-delay: 0s; }
+  .js .reveal { transform: none; filter: none; transition: opacity 200ms ease; transition-delay: 0s; }
   .js .hero__photo.reveal:not(.in) { transform: none; }
   .btn:hover, .btn:active, a.card:hover, .offer:hover .photo img, .btn:hover svg, .link:hover svg { transform: none; }
   .menu a { transform: none; transition: opacity 200ms ease; }

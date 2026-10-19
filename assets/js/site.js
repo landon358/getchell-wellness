@@ -114,11 +114,14 @@
 
     // ---- Scroll reveals ---------------------------------------------
     var rest = Array.prototype.filter.call(document.querySelectorAll('.reveal'), function (el) { return !el.classList.contains('gsap-hero'); });
-    gsap.set(rest, { autoAlpha: 0, y: 22 });
+    gsap.set(rest, { autoAlpha: 0, y: 22, filter: 'blur(6px)' });
     ScrollTrigger.batch(rest, {
       start: 'top 92%',
       once: true,
-      onEnter: function (batch) { gsap.to(batch, { autoAlpha: 1, y: 0, duration: 0.7, ease: EASE, stagger: 0.06, overwrite: true }); }
+      onEnter: function (batch) {
+        gsap.to(batch, { autoAlpha: 1, y: 0, filter: 'blur(0px)', duration: 0.7, ease: EASE, stagger: 0.06, overwrite: true,
+          onComplete: function () { gsap.set(batch, { clearProps: 'filter' }); } });
+      }
     });
 
     // ---- Photo parallax ---------------------------------------------

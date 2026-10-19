@@ -233,8 +233,9 @@ a.card:hover { transform: translateY(-3px); }
 .faq details[open] summary::after { transform: rotate(45deg); }
 .faq .faq__body { padding: 0 0 1.5rem; color: var(--ink-2); text-wrap: pretty; }
 
-.placeholder { border: 1.5px dashed rgba(31,59,97,0.35); border-radius: 12px; padding: 0.9rem 1.1rem; color: var(--blue); font-size: 0.9rem; background: transparent; }
+.placeholder { padding: 0.9rem 0; color: var(--blue); font-size: 0.9rem; border-top: 1.5px solid var(--line); }
 .placeholder strong { font-weight: 700; }
+.price { font-family: var(--serif); font-size: 2rem; color: var(--blue); margin: 0 0 0.75rem; line-height: 1; }
 
 .crisis { display: flex; gap: 1.1rem; align-items: flex-start; padding: 1.5rem 0; border-top: 1.5px solid var(--line); border-bottom: 1.5px solid var(--line); color: var(--ink-2); font-size: 0.95rem; }
 .crisis b { font-family: var(--serif); font-size: 1.8rem; color: var(--blue); line-height: 1; }

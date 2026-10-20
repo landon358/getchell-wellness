@@ -253,6 +253,13 @@ a.card { transition: transform 200ms var(--ease-out); }
 .cta .btn .btn__icon { background: rgba(255,255,255,0.18); }
 .cta .btn:hover .btn__icon { background: rgba(255,255,255,0.28); }
 
+/* ---------- embeds ---------- */
+
+.embed { border-radius: var(--r-lg); overflow: hidden; background: var(--fill); box-shadow: 0 0 0 6px var(--fill), 0 0 0 7px rgba(11,15,23,0.06); }
+.embed--placeholder { min-height: 560px; display: grid; place-items: center; text-align: center; padding: 2rem; border: 1.5px dashed var(--line-2); color: var(--ink-3); }
+.embed--placeholder strong { display: block; color: var(--ink); font-size: 1.1rem; margin-bottom: 0.4rem; }
+.embed--placeholder span { display: block; max-width: 28em; font-size: 0.95rem; }
+
 /* ---------- forms ---------- */
 
 .form { display: grid; gap: 1rem; border-top: 0; padding-top: 0; }
